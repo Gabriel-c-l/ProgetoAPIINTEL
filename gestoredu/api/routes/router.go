@@ -9,7 +9,6 @@ func AppRoutes(app *fiber.App) {
 	usersController := controller.NewUsersController()
 
 	v1 := app.Group("/v1")
-	v1.Post("/user", usersController.Create)
-	v1.Patch("/user/:id", usersController.Patch)
-	v1.Delete("/user/:id", usersController.Delete)
+	v1.Post("/user", usersController.CreateUser)
+	v1.Patch("/user/:id", usersController.UpdateUser)
 }
